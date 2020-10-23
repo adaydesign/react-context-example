@@ -1,5 +1,4 @@
 import React, {useReducer} from 'react';
-import './App.css';
 import MyForm from './MyForm'
 import MyInput from './MyInput'
 import MyControl from './MyControl'
