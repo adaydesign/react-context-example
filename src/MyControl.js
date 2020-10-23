@@ -3,6 +3,7 @@ import myContext, {increaseValue, decreaseValue, resetValue} from './myContext'
 
 const MyControl = () => {
 
+    // eslint-disable-next-line no-unused-vars
     const [_, dispatch] = useContext(myContext)
 
     const decreaseValueHandle = () => {
@@ -16,6 +17,7 @@ const MyControl = () => {
     const resetValueHandle = () => {
         dispatch(resetValue(0))
     }
+    
     return (<div>
         <button onClick={decreaseValueHandle}>DECREASE -</button>
         <button onClick={resetValueHandle}>RESET</button>
