@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useReducer} from 'react';
 import './App.css';
+import MyForm from './MyForm'
+import MyInput from './MyInput'
+import MyControl from './MyControl'
+import MyContext, { defaultContextValue,myReducer } from './myContext'
 
 function App() {
+
+  const [value, dispatch] = useReducer(myReducer, defaultContextValue)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={[value, dispatch]}>
+      <MyForm />
+      <MyInput />
+      <MyControl />
+    </MyContext.Provider>
   );
 }
 
