@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import myContext, {increaseValue, decreaseValue, resetValue} from './myContext'
+import myContext, {increaseValue, resetValue,decreaseValue} from './myContext'
 
 const MyControl = () => {
 
@@ -17,7 +17,7 @@ const MyControl = () => {
     const resetValueHandle = () => {
         dispatch(resetValue(0))
     }
-    
+
     return (<div>
         <button onClick={decreaseValueHandle}>DECREASE -</button>
         <button onClick={resetValueHandle}>RESET</button>
